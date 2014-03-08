@@ -1,0 +1,4 @@
+nsa_query_creator:
+    resource: "@NSAQueryCreatorBundle/Resources/config/routing.xml"
+    prefix:   /
+

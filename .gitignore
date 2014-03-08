@@ -11,3 +11,34 @@ web/bundles/*
 # Configuration files
 app/config/parameters.ini
 app/config/parameters.yml
+#
+# OS/environment generated files
+#
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+._*
+$RECYCLE.BIN/
+Icon?
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+#
+# Symfony
+#
+/web/bundles/
+/app/bootstrap.php.cache
+/app/cache/*
+/app/logs/*
+/build/
+/vendor/
+/bin/
+/composer.phar
+
+#
+# Project Files
+#
+.idea/
+atlassian-ide-plugin.xml
