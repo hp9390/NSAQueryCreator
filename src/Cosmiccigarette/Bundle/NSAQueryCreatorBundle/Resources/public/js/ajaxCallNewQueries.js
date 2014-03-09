@@ -12,16 +12,16 @@ var ajaxCallNewQueries = function() {
                 $('#badgeSearchQueryTwo').html(data.searchQueryTwo.query);
             })
                 .done(function () {
-                    console.log("second success");
+                    
                 })
                 .fail(function () {
-                    console.log("error");
+
                 })
                 .always(function () {
-                    console.log("complete");
+
                 });
             jqxhr.complete(function () {
-                console.log("second complete");
+
             });
         });
     });
@@ -35,16 +35,16 @@ var ajaxCallNewQueryOne = function() {
                 $('#badgeSearchQueryOne').html(data.searchQueryOne.query);
             })
                 .done(function () {
-                    console.log("second success");
+
                 })
                 .fail(function () {
-                    console.log("error");
+
                 })
                 .always(function () {
-                    console.log("complete");
+
                 });
             jqxhr.complete(function () {
-                console.log("second complete");
+
             });
         });
     });
@@ -58,16 +58,16 @@ var ajaxCallNewQueryTwo = function() {
                 $('#badgeSearchQueryTwo').html(data.searchQueryTwo.query);
             })
                 .done(function () {
-                    console.log("second success");
+
                 })
                 .fail(function () {
-                    console.log("error");
+
                 })
                 .always(function () {
-                    console.log("complete");
+
                 });
             jqxhr.complete(function () {
-                console.log("second complete");
+
             });
         });
     });
