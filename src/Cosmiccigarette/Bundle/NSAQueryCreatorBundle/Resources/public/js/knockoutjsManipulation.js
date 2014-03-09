@@ -3,8 +3,14 @@
  */
 require(['knockoutjs', 'jquery'], function (ko, $) {
     function AppViewModel() {
-        this.getNewQueries = function() {
-            alert('foo');
+        this.getNewQueries = function () {
+                ajaxCallNewQueries();
+        }
+        this.getNewQueryOne = function () {
+                ajaxCallNewQueryOne();
+        }
+        this.getNewQueryTwo = function () {
+                ajaxCallNewQueryTwo();
         }
     }
 

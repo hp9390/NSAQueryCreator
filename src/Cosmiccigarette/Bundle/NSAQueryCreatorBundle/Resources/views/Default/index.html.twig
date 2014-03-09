@@ -18,8 +18,7 @@
         '@bootstrap_less'
         "@NSAQueryCreatorBundle/Resources/public/css/custom.css"
         combine=true
-        filter='cssrewrite'
-        %}
+        filter='cssrewrite' %}
         <link type="text/css" rel="stylesheet" media="all" href="{{ asset_url }}">
         {% endstylesheets %}
     {% endblock stylesheets %}
@@ -43,11 +42,11 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 {% if site == 'index' %}
-                <li class="active"><a href="{{ url('nsa_query_creator_homepage') }}">Home</a></li>
-                <li><a href="{{ url('nsa_query_creator_learn_more') }}">About</a></li>
+                    <li class="active"><a href="{{ url('nsa_query_creator_homepage') }}">Home</a></li>
+                    <li><a href="{{ url('nsa_query_creator_learn_more') }}">About</a></li>
                 {% elseif site == 'learnMore' %}
-                <li><a href="{{ url('nsa_query_creator_homepage') }}">Home</a></li>
-                <li class="active"><a href="{{ url('nsa_query_creator_learn_more') }}">About</a></li>
+                    <li><a href="{{ url('nsa_query_creator_homepage') }}">Home</a></li>
+                    <li class="active"><a href="{{ url('nsa_query_creator_learn_more') }}">About</a></li>
                 {% endif %}
             </ul>
             <form class="navbar-form navbar-right">
@@ -101,27 +100,39 @@
                 blacklisted by the NSA.
             </p>
 
-            <p>
+            {#<p>#}
+
             <div class="btn-group btn-group-justified">
-                <a type="button" class="btn btn-default" id="searchButton"
+                <a type="button" class="btn btn-default" id="searchButtonOne"
                    href="http://www.google.com/search?q={{ searchQueryOne["query"]|trim }}" target="_blank">
                     Google something...
-                <span class="badge pull-right">
+                <span class="badge pull-right" id="badgeSearchQueryOne">
                     {{ searchQueryOne['query'] }}
                 </span>
                 </a>
-                <a type="button" class="btn btn-default" id="searchButton"
+                <a type="button" class="btn btn-default" id="searchButtonTwo"
                    href="http://www.google.com/search?q={{ searchQueryTwo["query"]|trim }}" target="_blank">
                     Google something else...
-                <span class="badge pull-right">
+                <span class="badge pull-right" id="badgeSearchQueryTwo">
                     {{ searchQueryTwo['query'] }}
                 </span>
                 </a>
             </div>
-            <a href="#" id="getNewQueries" class="btn btn-block btn-default" data-bind="click: getNewQueries">
-                Get new queries
-            </a>
-            </p>
+            <div class="btn-group btn-group-justified">
+                <a href="#" id="getNewQueryOne" class="btn btn-default" data-bind="click: getNewQueryOne"
+                   data-path="{{ url('nsa_query_creator_ajax_update_query') }}">
+                    Get new query for the left button
+                </a>
+                <a href="#" id="getNewQueryTwo" class="btn btn-default" data-bind="click: getNewQueryTwo"
+                   data-path="{{ url('nsa_query_creator_ajax_update_query') }}">
+                    Get new query for the right button
+                </a>
+                <a href="#" id="getNewQueries" class="btn btn-default" data-bind="click: getNewQueries"
+                   data-path="{{ url('nsa_query_creator_ajax_update_query') }}">
+                    Get new queries for both buttons
+                </a>
+            </div>
+            {#</p>#}
         </div>
     </div>
 
@@ -130,7 +141,8 @@
     <footer>
         <div class="copyrightContainer" id="copyrightFooterContainer">
             <p>
-                &copy; The People {% if yearICreatedThis != thisYear %} {{ yearICreatedThis }} &mdash; {% endif %} {{ thisYear }}
+                &copy; The
+                People {% if yearICreatedThis != thisYear %} {{ yearICreatedThis }} &mdash; {% endif %} {{ thisYear }}
             </p>
         </div>
     </footer>
@@ -158,6 +170,9 @@
                 {% endjavascripts %}
                 {% javascripts '@NSAQueryCreatorBundle/Resources/public/js/knockoutjsManipulation.js' %}
                 "knockoutjsManipulation": "{{ asset_url | replace({ ('.js'): '' }) }}",
+                {% endjavascripts %}
+                {% javascripts '@NSAQueryCreatorBundle/Resources/public/js/ajaxCallNewQueries.js' %}
+                "ajaxCallNewQueries": "{{ asset_url | replace({ ('.js'): '' }) }}",
                 {% endjavascripts %}
                 "knockoutjs": "//cdnjs.cloudflare.com/ajax/libs/knockout/3.0.0/knockout-min"
             }});
