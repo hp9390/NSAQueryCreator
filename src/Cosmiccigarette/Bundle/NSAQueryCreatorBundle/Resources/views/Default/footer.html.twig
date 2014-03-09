@@ -1,0 +1,11 @@
+{% extends 'NSAQueryCreatorBundle:Default:layout.html.twig' %}
+{% block footer %}
+    <footer>
+        <div class="copyrightContainer" id="copyrightFooterContainer">
+            <p>
+                &copy; The
+                People {% if yearICreatedThis != thisYear %} {{ yearICreatedThis }} &mdash; {% endif %} {{ thisYear }}
+            </p>
+        </div>
+    </footer>
+{% endblock footer %}
