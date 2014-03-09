@@ -4,14 +4,14 @@ Options +FollowSymlinks
 RewriteEngine On
 
 # Explicitly disable rewriting for front controllers
-RewriteRule ^web/app_dev.php - [L]
-#RewriteRule ^web/app.php - [L]
+#RewriteRule ^web/app_dev.php - [L]
+RewriteRule ^web/app.php - [L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 
 # Change below before deploying to production
-#RewriteRule ^(.*)$ web/app.php [QSA,L]
-RewriteRule ^(.*)$ web/app_dev.php [QSA,L]
+RewriteRule ^(.*)$ web/app.php [QSA,L]
+#RewriteRule ^(.*)$ web/app_dev.php [QSA,L]
 # im still testing it under the dev env.
 </IfModule>
 <IfModule mod_deflate.c>
