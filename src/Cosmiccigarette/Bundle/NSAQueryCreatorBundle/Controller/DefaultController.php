@@ -43,9 +43,9 @@ class DefaultController extends Controller {
         $max =
             $em->createQuery('SELECT MAX(nsa.id) FROM NSAQueryCreatorBundle:queries nsa')
                ->getSingleScalarResult();
-        return $em->createQuery('SELECT nsa.query FROM NSAQueryCreatorBundle:queries nsa WHERE nsa.id >= :rand ORDER BY nsa.id ASC')
+        return array_map('trim', $em->createQuery('SELECT nsa.query FROM NSAQueryCreatorBundle:queries nsa WHERE nsa.id >= :rand ORDER BY nsa.id ASC')
                   ->setParameter('rand', rand(0, $max))
                   ->setMaxResults(1)
-                  ->getOneOrNullResult();
+                  ->getOneOrNullResult());
     }
 }

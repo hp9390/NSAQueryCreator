@@ -1,0 +1,35 @@
+{% extends 'NSAQueryCreatorBundle:Default:layout.html.twig' %}
+{% block requirejs %}
+    {{ require_js_initialize() }}
+    <script type="text/javascript">
+        requirejs.config({
+            "paths": {
+                {% javascripts '@jquery' %}
+                "jquery": "{{ asset_url | replace({ ('.js'): '' }) }}",
+                {% endjavascripts %}
+                {% javascripts '@modernizr' %}
+                "modernizr": "{{ asset_url | replace({ ('.js'): '' }) }}",
+                {% endjavascripts %}
+                {% javascripts '@bootstrapJS' %}
+                "bootstrap": "{{ asset_url | replace({ ('.js'): '' }) }}",
+                {% endjavascripts %}
+                {% javascripts '@NSAQueryCreatorBundle/Resources/public/js/app.js' %}
+                "app": "{{ asset_url | replace({ ('.js'): '' }) }}",
+                {% endjavascripts %}
+                {% javascripts '@NSAQueryCreatorBundle/Resources/public/js/jqueryManipulation.js' %}
+                "jqueryManipulation": "{{ asset_url | replace({ ('.js'): '' }) }}",
+                {% endjavascripts %}
+                {% javascripts '@NSAQueryCreatorBundle/Resources/public/js/knockoutjsManipulation.js' %}
+                "knockoutjsManipulation": "{{ asset_url | replace({ ('.js'): '' }) }}",
+                {% endjavascripts %}
+                {% javascripts '@NSAQueryCreatorBundle/Resources/public/js/ajaxCallNewQueries.js' %}
+                "ajaxCallNewQueries": "{{ asset_url | replace({ ('.js'): '' }) }}",
+                {% endjavascripts %}
+                "knockoutjs": "//cdnjs.cloudflare.com/ajax/libs/knockout/3.0.0/knockout-min"
+            }});
+    </script>
+    <script type="text/javascript">
+        require(['app'], function () {
+        });
+    </script>
+{% endblock requirejs %}
