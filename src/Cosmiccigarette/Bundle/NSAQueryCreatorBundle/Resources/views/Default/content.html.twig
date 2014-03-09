@@ -37,28 +37,31 @@
 
                 <div class="bg-info">
                     <p class="lead text-center text-info">
-                        All the keywords used as search queries for Google are actual indexed keywords which were publicly
+                        All the keywords used as search queries for Google are actual indexed keywords which were
+                        publicly
                         announced as such by the
                         <abbr title="National Security Agency" class="initialism">
                             NSA.
                         </abbr>
                     </p>
                 </div>
-                <div class="btn-group btn-group-justified">
-                    <a type="button" class="btn btn-default" id="searchButtonOne"
-                       href="http://www.google.com/search?q={{ searchQueryOne["query"]|trim }}" target="_blank">
-                        Google something...
+                <div id="queryButtons">
+                    <div class="btn-group btn-group-justified">
+                        <a type="button" class="btn btn-default" id="searchButtonOne"
+                           href="http://www.google.com/search?q={{ searchQueryOne["query"]|trim }}" target="_blank" data-bind="event: { mouseover: enableDetailsOne, mouseout: disableDetails }">
+                            Google something...
                 <span class="badge pull-right" id="badgeSearchQueryOne">
                     {{ searchQueryOne['query'] }}
                 </span>
-                    </a>
-                    <a type="button" class="btn btn-default" id="searchButtonTwo"
-                       href="http://www.google.com/search?q={{ searchQueryTwo["query"]|trim }}" target="_blank">
-                        Google something else...
+                        </a>
+                        <a type="button" class="btn btn-default" id="searchButtonTwo"
+                           href="http://www.google.com/search?q={{ searchQueryTwo["query"]|trim }}" target="_blank" data-bind="event: { mouseover: enableDetailsTwo, mouseout: disableDetails }">
+                            Google something else...
                 <span class="badge pull-right" id="badgeSearchQueryTwo">
                     {{ searchQueryTwo['query'] }}
                 </span>
-                    </a>
+                        </a>
+                    </div>
                 </div>
                 <div class="btn-group btn-group-justified">
                     <a href="#" id="getNewQueryOne" class="btn btn-default" data-bind="click: getNewQueryOne"
