@@ -71,9 +71,6 @@ swiftmailer:
 # Assetic Configuration
 assetic:
     assets:
-        typeahead:
-            inputs:
-                - '%kernel.root_dir%/../vendor/twitter/typeahead.js/dist/typeahead.bundle.min.js'
         jquery:
             inputs:
                 - '%kernel.root_dir%/../vendor/components/jquery/jquery.min.js'
