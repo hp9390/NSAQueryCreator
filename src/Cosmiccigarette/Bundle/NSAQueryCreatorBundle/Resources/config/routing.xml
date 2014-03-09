@@ -4,7 +4,13 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
 
-    <route id="nsa_query_creator_homepage" pattern="/hello/{name}">
+    <route id="nsa_query_creator_homepage" pattern="/">
         <default key="_controller">NSAQueryCreatorBundle:Default:index</default>
+    </route>
+    <route id="nsa_query_creator_learn_more" pattern="/learnMore">
+        <default key="_controller">NSAQueryCreatorBundle:Default:learnMore</default>
+    </route>
+    <route id="nsa_query_creator_ajax_update_query" pattern="/ajaxUpdateQuery">
+        <default key="_controller">NSAQueryCreatorBundle:Default:ajaxUpdateQuery</default>
     </route>
 </routes>
