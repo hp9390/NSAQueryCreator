@@ -13,8 +13,9 @@ class DefaultController extends Controller {
         return $this->render('NSAQueryCreatorBundle:Default:index.html.twig', $parameters);
     }
     public function learnMoreAction() {
-        $searchQuery = $this->findOneRandom();
-        $parameters = array('yearICreatedThis' => 2014, 'name' => 'NSA Query Creator', 'site' => 'learnMore', 'searchQuery' => $searchQuery);
+        $searchQueryOne = $this->findOneRandom();
+        $searchQueryTwo = $this->findOneRandom();
+        $parameters = array('yearICreatedThis' => 2014, 'thisYear' => date("Y"), 'name' => 'NSA Query Creator', 'site' => 'learnMore', 'searchQueryOne' => $searchQueryOne, 'searchQueryTwo' => $searchQueryTwo);
         return $this->render('NSAQueryCreatorBundle:Default:index.html.twig', $parameters);
     }
     public function findOneRandom()
