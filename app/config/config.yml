@@ -83,6 +83,9 @@ assetic:
         bootstrapJS:
             inputs:
                 - '%kernel.root_dir%/../vendor/twitter/bootstrap/dist/js/bootstrap.min.js'
+        bootstrapTooltipJS:
+            inputs:
+                - '%kernel.root_dir%/../vendor/twitter/bootstrap/js/tooltip.js'
         bootstrapCSS:
             inputs:
                 - '%kernel.root_dir%/../vendor/twitter/bootstrap/dist/css/bootstrap.min.css'

@@ -12,6 +12,15 @@ require(['knockoutjs', 'jquery'], function (ko, $) {
         this.getNewQueryTwo = function () {
                 ajaxCallNewQueryTwo();
         }
+        this.enableDetailsOne = function() {
+            detailsOne();
+        }
+        this.enableDetailsTwo = function() {
+            detailsTwo();
+        }
+        this.disableDetails = function() {
+            disableDetails();
+        }
     }
 
     ko.applyBindings(new AppViewModel());
