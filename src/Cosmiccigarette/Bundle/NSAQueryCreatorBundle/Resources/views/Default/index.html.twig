@@ -42,8 +42,13 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
+                {% if site == 'index' %}
                 <li class="active"><a href="{{ url('nsa_query_creator_homepage') }}">Home</a></li>
                 <li><a href="{{ url('nsa_query_creator_learn_more') }}">About</a></li>
+                {% elseif site == 'learnMore' %}
+                <li><a href="{{ url('nsa_query_creator_homepage') }}">Home</a></li>
+                <li class="active"><a href="{{ url('nsa_query_creator_learn_more') }}">About</a></li>
+                {% endif %}
             </ul>
             <form class="navbar-form navbar-right">
                 <div class="form-group">
