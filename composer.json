@@ -23,7 +23,8 @@
         "twitter/bootstrap": "3.0.x-dev",
         "hearsay/require-js-bundle": "2.0.x-dev",
         "oyejorge/less.php": "1.7.x-dev",
-        "components/modernizr": "2.6.2"
+        "components/modernizr": "2.6.2",
+        "knplabs/knp-menu-bundle": "1.1.x"
     },
     "scripts": {
         "post-install-cmd": [
