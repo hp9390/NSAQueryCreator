@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "8e64df79e032dc695118e32f8e0f18ee",
+    "hash": "11d2c5c12835ad7819d6d3e283c5fc2d",
     "packages": [
         {
             "name": "components/jquery",
@@ -1207,6 +1207,47 @@
                 "stylesheet"
             ],
             "time": "2014-03-04 18:49:54"
+        },
+        {
+            "name": "packagist/cssembed-bin",
+            "version": "v0.4.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/packagist/cssembed-bin.git",
+                "reference": "470de313e2de3e9e24369e61f8c545744470b2a0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/packagist/cssembed-bin/zipball/470de313e2de3e9e24369e61f8c545744470b2a0",
+                "reference": "470de313e2de3e9e24369e61f8c545744470b2a0",
+                "shasum": ""
+            },
+            "bin": [
+                "bin/cssembed.jar"
+            ],
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Krusty Kode",
+                    "email": "kaiwa@20minutemail.com",
+                    "role": "maintainer"
+                },
+                {
+                    "name": "Nicholas C. Zakas",
+                    "homepage": "https://github.com/nzakas",
+                    "role": "developer"
+                }
+            ],
+            "description": "CSSEmbed packaged for composer. A small program/library to automate embedding of data URIs in CSS files.",
+            "homepage": "https://github.com/nzakas/cssembed",
+            "keywords": [
+                "css"
+            ],
+            "time": "2013-07-15 18:31:47"
         },
         {
             "name": "psr/log",
