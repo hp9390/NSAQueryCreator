@@ -1,86 +1,11 @@
 {% extends 'NSAQueryCreatorBundle:Default:layout.html.twig' %}
 {% block content %}
-    <div class="jumbotron">
-        <div class="container">
-            {% if site == 'index' %}
-                <h1>Hello, world!</h1>
-
-                <p>
-                    This page does not do very much yet. However, what it does is give you a search query to google for
-                    terms the NSA is looking for.
-                </p>
-
-                <p>
-                    <a href="{{ url('nsa_query_creator_learn_more') }}" class="btn btn-primary btn-lg">
-                        Learn more &raquo;
-                    </a>
-                </p>
-            {% elseif site == 'learnMore' %}
-                <p>
-                    More coming...
-                </p>
-            {% endif %}
-        </div>
-    </div>
-    <div class="container">
-        <!-- Example row of columns -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h2>
-                    Get a Google query that will trigger the NSA:
-                </h2>
-
-                <p>
-                    Here, you are able to get a link to search for a query on Google which contains words which are
-                    blacklisted by the NSA.
-                </p>
-
-                <div class="bg-info">
-                    <p class="lead text-center text-info">
-                        All the keywords used as search queries for Google are actual indexed keywords which were
-                        publicly
-                        announced as such by the
-                        <abbr title="National Security Agency" class="initialism">
-                            NSA.
-                        </abbr>
-                    </p>
-                </div>
-                <div id="queryButtons">
-                    <div class="btn-group btn-group-justified">
-                        <a type="button" class="btn btn-default" id="searchButtonOne"
-                           href="http://www.google.com/search?q={{ searchQueryOne["query"]|trim }}" target="_blank" data-bind="event: { mouseover: enableDetailsOne, mouseout: disableDetails }">
-                            Google something...
-                <span class="badge pull-right" id="badgeSearchQueryOne">
-                    {{ searchQueryOne['query'] }}
-                </span>
-                        </a>
-                        <a type="button" class="btn btn-default" id="searchButtonTwo"
-                           href="http://www.google.com/search?q={{ searchQueryTwo["query"]|trim }}" target="_blank" data-bind="event: { mouseover: enableDetailsTwo, mouseout: disableDetails }">
-                            Google something else...
-                <span class="badge pull-right" id="badgeSearchQueryTwo">
-                    {{ searchQueryTwo['query'] }}
-                </span>
-                        </a>
-                    </div>
-                </div>
-                <div class="btn-group btn-group-justified">
-                    <a href="#" id="getNewQueryOne" class="btn btn-default" data-bind="click: getNewQueryOne"
-                       data-path="{{ url('nsa_query_creator_ajax_update_query') }}">
-                        Get new query for the left button
-                    </a>
-                    <a href="#" id="getNewQueries" class="btn btn-default" data-bind="click: getNewQueries"
-                       data-path="{{ url('nsa_query_creator_ajax_update_query') }}">
-                        Get new queries for both buttons
-                    </a>
-                    <a href="#" id="getNewQueryTwo" class="btn btn-default" data-bind="click: getNewQueryTwo"
-                       data-path="{{ url('nsa_query_creator_ajax_update_query') }}">
-                        Get new query for the right button
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <hr>
-        {% include 'NSAQueryCreatorBundle:Default:footer.html.twig' %}
-    </div>
+    {% if site == 'index'  %}
+        {% include 'NSAQueryCreatorBundle:Default:indexContent.html.twig' %}
+        {% elseif site == 'learnMore' %}
+            {% include 'NSAQueryCreatorBundle:Default:learnMore.html.twig' %}
+    {% elseif site == 'allQueries' %}
+        {% include 'NSAQueryCreatorBundle:Default:allQueries.html.twig' %}
+    {% endif %}
+    {% include 'NSAQueryCreatorBundle:Default:footer.html.twig' %}
 {% endblock content %}

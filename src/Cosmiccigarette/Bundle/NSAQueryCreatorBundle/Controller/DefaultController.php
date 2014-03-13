@@ -36,6 +36,17 @@ class DefaultController extends Controller {
         return new JsonResponse(array('searchQueryOne' => $searchQueryOne, 'searchQueryTwo' => $searchQueryTwo));
     }
 
+    public function allQueriesAction() {
+        $queries = $this->getDoctrine()->getRepository('NSAQueryCreatorBundle:queries')->findAll();
+
+        $parameters = array('yearICreatedThis' => 2014,
+                            'thisYear' => date("Y"),
+                            'name' => 'NSA Query Creator',
+                            'site' => 'allQueries',
+                            'queries' => $queries);
+        return $this->render('NSAQueryCreatorBundle:Default:index.html.twig', $parameters);
+    }
+
     public function findOneRandom() {
         $em =
             $this->getDoctrine()
@@ -48,4 +59,5 @@ class DefaultController extends Controller {
                   ->setMaxResults(1)
                   ->getOneOrNullResult());
     }
+
 }
