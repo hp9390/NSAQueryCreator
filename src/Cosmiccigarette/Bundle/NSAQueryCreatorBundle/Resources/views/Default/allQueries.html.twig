@@ -1,0 +1,23 @@
+<div class="panel panel-default text-center">
+    <div class="panel-heading">
+        All NSA indexed queries
+    </div>
+    <div class="panel-body">
+        <p>
+            Below are all keywords indexed by the NSA
+        </p>
+    </div>
+
+    <ul class="list-group">
+        {% for query in queries %}
+            <li class="list-group-item">
+                <a href="https://www.google.de/search?q={{ query.query }}" target="_blank" type="button" class="btn btn-default btn-block glyphicon glyphicon-link">
+                    {{ query.query }}
+                    <span class="badge">
+                    {{ loop.index }}
+                </span>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

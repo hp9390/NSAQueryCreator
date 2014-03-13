@@ -13,4 +13,7 @@
     <route id="nsa_query_creator_ajax_update_query" pattern="/ajaxUpdateQuery">
         <default key="_controller">NSAQueryCreatorBundle:Default:ajaxUpdateQuery</default>
     </route>
+    <route id="nsa_query_creator_show_all_queries" pattern="/allQueries">
+        <default key="_controller">NSAQueryCreatorBundle:Default:allQueries</default>
+    </route>
 </routes>
