@@ -17,4 +17,8 @@
         </service>
     </services>
     -->
+
+    <parameters>
+        <parameter key="nsa_query_creator.helper.php">Cosmiccigarette\Bundle\NSAQueryCreatorBundle\DependencyInjection</parameter>
+    </parameters>
 </container>
