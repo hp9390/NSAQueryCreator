@@ -23,17 +23,17 @@
             <div id="queryButtons">
                 <div class="btn-group btn-group-justified">
                     <a type="button" class="btn btn-default" id="searchButtonOne"
-                       href="http://www.google.com/search?q={{ searchQueryOne["query"]|trim }}" target="_blank" data-bind="event: { mouseover: enableDetailsOne, mouseout: disableDetails }">
+                       href="http://www.google.com/search?q={{ searchQueryOne|trim }}" target="_blank" data-bind="event: { mouseover: enableDetailsOne, mouseout: disableDetails }">
                         Google something...
                 <span class="badge pull-right" id="badgeSearchQueryOne">
-                    {{ searchQueryOne['query'] }}
+                    {{ searchQueryOne }}
                 </span>
                     </a>
                     <a type="button" class="btn btn-default" id="searchButtonTwo"
-                       href="http://www.google.com/search?q={{ searchQueryTwo["query"]|trim }}" target="_blank" data-bind="event: { mouseover: enableDetailsTwo, mouseout: disableDetails }">
+                       href="http://www.google.com/search?q={{ searchQueryTwo|trim }}" target="_blank" data-bind="event: { mouseover: enableDetailsTwo, mouseout: disableDetails }">
                         Google something else...
                 <span class="badge pull-right" id="badgeSearchQueryTwo">
-                    {{ searchQueryTwo['query'] }}
+                    {{ searchQueryTwo }}
                 </span>
                     </a>
                 </div>
