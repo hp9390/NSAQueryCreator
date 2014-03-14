@@ -37,7 +37,14 @@ class DefaultController extends Controller {
     }
 
     public function allQueriesAction() {
-        $queries = $this->getDoctrine()->getRepository('NSAQueryCreatorBundle:queries')->findAll();
+//        $queries = $this->getDoctrine()->getRepository('NSAQueryCreatorBundle:queries')->findAll();
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'http://localhost:8000/rest/allQueries');
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-type: application/json'));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+        $response = curl_exec($ch);
+        $queries = json_decode($response);
 
         $parameters = array('yearICreatedThis' => 2014,
                             'thisYear' => date("Y"),

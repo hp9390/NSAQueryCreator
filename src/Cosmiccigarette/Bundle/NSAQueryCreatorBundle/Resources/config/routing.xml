@@ -16,4 +16,7 @@
     <route id="nsa_query_creator_show_all_queries" pattern="/allQueries">
         <default key="_controller">NSAQueryCreatorBundle:Default:allQueries</default>
     </route>
+    <route id="nsa_query_creator_rest_all_queries" pattern="/rest/allQueries">
+        <default key="_controller">NSAQueryCreatorBundle:Rest:getAllQueries</default>
+    </route>
 </routes>
