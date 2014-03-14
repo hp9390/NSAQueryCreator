@@ -12,7 +12,7 @@ var ajaxCallNewQueries = function() {
                 $('#badgeSearchQueryTwo').html(data.searchQueryTwo);
             })
                 .done(function () {
-                    
+
                 })
                 .fail(function () {
 

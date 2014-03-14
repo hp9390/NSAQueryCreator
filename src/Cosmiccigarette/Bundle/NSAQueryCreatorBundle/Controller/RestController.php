@@ -5,6 +5,7 @@ namespace Cosmiccigarette\Bundle\NSAQueryCreatorBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use FOS\RestBundle\View\View AS FOSView;
+use Cosmiccigarette\Bundle\NSAQueryCreatorBundle\DependencyInjection\helper;
 
 class RestController extends Controller {
 
@@ -56,19 +57,14 @@ class RestController extends Controller {
 
 
     public function ajaxUpdateQueryAction(Request $request) {
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $this->generateUrl('nsa_query_creator_rest_random_query', $params = array(), $absolute = true));
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-type: application/json'));
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-
-        $searchQueryOne = json_decode(curl_exec($ch))->queries->query;
-        $searchQueryTwo = json_decode(curl_exec($ch))->queries->query;
+        $queries = helper::returnSearchQueries(5, $this->generateUrl('nsa_query_creator_rest_random_query', $params = array(), $absolute = true));
 
         $view = FOSView::create();
 
         $view->setFormat('json');
 
-        $response = array('searchQueryOne' => $searchQueryOne, 'searchQueryTwo' => $searchQueryTwo);
+        $response = array('searchQueryOne' => $queries['first'],
+                          'searchQueryTwo' => $queries['second']);
 
         if ($response) {
             $view->setStatusCode(200);
