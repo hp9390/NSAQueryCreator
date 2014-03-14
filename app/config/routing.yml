@@ -2,3 +2,6 @@ nsa_query_creator:
     resource: "@NSAQueryCreatorBundle/Resources/config/routing.xml"
     prefix:   /
 
+allQueries:
+    type:     rest
+    resource: Cosmiccigarette\Bundle\NSAQueryCreatorBundle\Controller\RestController

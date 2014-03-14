@@ -6,10 +6,10 @@ var ajaxCallNewQueries = function() {
         $(document).ready(function () {
             var requestPath = $('#getNewQueries').data('path');
             var jqxhr = $.getJSON(requestPath, function (data) {
-                $("#searchButtonOne").attr("href", "http://www.google.com/search?q=" + data.searchQueryOne.query);
-                $("#searchButtonTwo").attr("href", "http://www.google.com/search?q=" + data.searchQueryTwo.query);
-                $('#badgeSearchQueryOne').html(data.searchQueryOne.query);
-                $('#badgeSearchQueryTwo').html(data.searchQueryTwo.query);
+                $("#searchButtonOne").attr("href", "http://www.google.com/search?q=" + data.searchQueryOne);
+                $("#searchButtonTwo").attr("href", "http://www.google.com/search?q=" + data.searchQueryTwo);
+                $('#badgeSearchQueryOne').html(data.searchQueryOne);
+                $('#badgeSearchQueryTwo').html(data.searchQueryTwo);
             })
                 .done(function () {
                     
@@ -31,8 +31,8 @@ var ajaxCallNewQueryOne = function() {
         $(document).ready(function () {
             var requestPath = $('#getNewQueryOne').data('path');
             var jqxhr = $.getJSON(requestPath, function (data) {
-                $("#searchButtonOne").attr("href", "http://www.google.com/search?q=" + data.searchQueryOne.query);
-                $('#badgeSearchQueryOne').html(data.searchQueryOne.query);
+                $("#searchButtonOne").attr("href", "http://www.google.com/search?q=" + data.searchQueryOne);
+                $('#badgeSearchQueryOne').html(data.searchQueryOne);
             })
                 .done(function () {
 
@@ -54,8 +54,8 @@ var ajaxCallNewQueryTwo = function() {
         $(document).ready(function () {
             var requestPath = $('#getNewQueryTwo').data('path');
             var jqxhr = $.getJSON(requestPath, function (data) {
-                $("#searchButtonTwo").attr("href", "http://www.google.com/search?q=" + data.searchQueryTwo.query);
-                $('#badgeSearchQueryTwo').html(data.searchQueryTwo.query);
+                $("#searchButtonTwo").attr("href", "http://www.google.com/search?q=" + data.searchQueryTwo);
+                $('#badgeSearchQueryTwo').html(data.searchQueryTwo);
             })
                 .done(function () {
 

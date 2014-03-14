@@ -7,8 +7,14 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 class DefaultController extends Controller {
     public function indexAction() {
-        $searchQueryOne = $this->findOneRandom();
-        $searchQueryTwo = $this->findOneRandom();
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $this->generateUrl('nsa_query_creator_rest_random_query', $params = array(), $absolute = true));
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-type: application/json'));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+        $searchQueryOne = json_decode(curl_exec($ch))->queries->query;
+        $searchQueryTwo = json_decode(curl_exec($ch))->queries->query;
+
         $parameters = array('yearICreatedThis' => 2014,
                             'thisYear' => date("Y"),
                             'name' => 'NSA Query Creator',
@@ -19,8 +25,14 @@ class DefaultController extends Controller {
     }
 
     public function learnMoreAction() {
-        $searchQueryOne = $this->findOneRandom();
-        $searchQueryTwo = $this->findOneRandom();
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $this->generateUrl('nsa_query_creator_rest_random_query', $params = array(), $absolute = true));
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-type: application/json'));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+        $searchQueryOne = json_decode(curl_exec($ch))->queries->query;
+        $searchQueryTwo = json_decode(curl_exec($ch))->queries->query;
+
         $parameters = array('yearICreatedThis' => 2014,
                             'thisYear' => date("Y"),
                             'name' => 'NSA Query Creator',
@@ -30,14 +42,15 @@ class DefaultController extends Controller {
         return $this->render('NSAQueryCreatorBundle:Default:index.html.twig', $parameters);
     }
 
-    public function ajaxUpdateQueryAction() {
-        $searchQueryOne = $this->findOneRandom();
-        $searchQueryTwo = $this->findOneRandom();
-        return new JsonResponse(array('searchQueryOne' => $searchQueryOne, 'searchQueryTwo' => $searchQueryTwo));
-    }
 
     public function allQueriesAction() {
-        $queries = $this->getDoctrine()->getRepository('NSAQueryCreatorBundle:queries')->findAll();
+//        $queries = $this->getDoctrine()->getRepository('NSAQueryCreatorBundle:queries')->findAll();
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $this->generateUrl('nsa_query_creator_rest_all_queries', $params = array(), $absolute = true));
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-type: application/json'));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+        $queries = json_decode(curl_exec($ch))->queries;
 
         $parameters = array('yearICreatedThis' => 2014,
                             'thisYear' => date("Y"),
@@ -47,17 +60,5 @@ class DefaultController extends Controller {
         return $this->render('NSAQueryCreatorBundle:Default:index.html.twig', $parameters);
     }
 
-    public function findOneRandom() {
-        $em =
-            $this->getDoctrine()
-                 ->getManager();
-        $max =
-            $em->createQuery('SELECT MAX(nsa.id) FROM NSAQueryCreatorBundle:queries nsa')
-               ->getSingleScalarResult();
-        return array_map('trim', $em->createQuery('SELECT nsa.query FROM NSAQueryCreatorBundle:queries nsa WHERE nsa.id >= :rand ORDER BY nsa.id ASC')
-                  ->setParameter('rand', rand(0, $max))
-                  ->setMaxResults(1)
-                  ->getOneOrNullResult());
-    }
 
 }
