@@ -18,6 +18,8 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Cosmiccigarette\Bundle\NSAQueryCreatorBundle\NSAQueryCreatorBundle(),
             new Hearsay\RequireJSBundle\HearsayRequireJSBundle(),
+            new FOS\RestBundle\FOSRestBundle(),
+            new JMS\SerializerBundle\JMSSerializerBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle()
         );
 
