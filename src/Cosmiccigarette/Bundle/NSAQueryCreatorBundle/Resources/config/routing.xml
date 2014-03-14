@@ -11,12 +11,15 @@
         <default key="_controller">NSAQueryCreatorBundle:Default:learnMore</default>
     </route>
     <route id="nsa_query_creator_ajax_update_query" pattern="/ajaxUpdateQuery">
-        <default key="_controller">NSAQueryCreatorBundle:Default:ajaxUpdateQuery</default>
+        <default key="_controller">NSAQueryCreatorBundle:Rest:ajaxUpdateQuery</default>
     </route>
     <route id="nsa_query_creator_show_all_queries" pattern="/allQueries">
         <default key="_controller">NSAQueryCreatorBundle:Default:allQueries</default>
     </route>
     <route id="nsa_query_creator_rest_all_queries" pattern="/rest/allQueries">
         <default key="_controller">NSAQueryCreatorBundle:Rest:getAllQueries</default>
+    </route>
+    <route id="nsa_query_creator_rest_random_query" pattern="/rest/query/random">
+        <default key="_controller">NSAQueryCreatorBundle:Rest:getRandomQuery</default>
     </route>
 </routes>
