@@ -38,6 +38,7 @@ class DefaultController extends Controller {
 
     public function allQueriesAction() {
 //        $queries = $this->getDoctrine()->getRepository('NSAQueryCreatorBundle:queries')->findAll();
+
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, 'http://localhost:8000/rest/allQueries');
         curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-type: application/json'));
