@@ -152,3 +152,25 @@ hearsay_require_js:
             name:
                 value: ~ # Required
         timeout: 60
+
+sensio_framework_extra:
+    view:
+        annotations: false
+
+fos_rest:
+    routing_loader:
+        default_format: json
+    view:
+        view_response_listener: true
+        failed_validation: HTTP_BAD_REQUEST
+        default_engine: php
+        formats:
+            json: true
+            rss: false
+            xml: false
+    format_listener:
+        rules:
+            - prefer_extension: false
+    body_listener:
+        decoders:
+            json: fos_rest.decoder.json
