@@ -43,6 +43,8 @@
     </script>
     <script type="text/javascript">
         require(['app'], function () {
+            var c = document.getElementById("fadeMeLoadingOverlay");
+            c.parentNode.removeChild(c);
         });
     </script>
 {% endblock requirejs %}
