@@ -57,7 +57,7 @@ class RestController extends Controller {
 
 
     public function ajaxUpdateQueryAction() {
-        $queries = helper::returnSearchQueries(5, $this->generateUrl('nsa_query_creator_rest_random_query', $params = array(), $absolute = true));
+        $queries = helper::returnSearchQueries(0, $this->generateUrl('nsa_query_creator_rest_random_query', $params = array(), $absolute = true));
 
         $view = FOSView::create();
 
