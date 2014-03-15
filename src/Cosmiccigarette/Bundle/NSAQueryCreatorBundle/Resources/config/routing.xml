@@ -22,4 +22,7 @@
     <route id="nsa_query_creator_rest_random_query" pattern="/rest/query/random">
         <default key="_controller">NSAQueryCreatorBundle:Rest:getRandomQuery</default>
     </route>
+    <route id="nsa_query_creator_add_query" pattern="/add/query">
+        <default key="_controller">NSAQueryCreatorBundle:Default:addQuery</default>
+    </route>
 </routes>

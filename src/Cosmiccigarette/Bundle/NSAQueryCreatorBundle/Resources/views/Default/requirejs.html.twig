@@ -31,6 +31,13 @@
                 {% javascripts '@NSAQueryCreatorBundle/Resources/public/js/enableDetails.js' %}
                 "enableDetails": "{{ asset_url | replace({ ('.js'): '' }) }}",
                 {% endjavascripts %}
+                {% javascripts '@NSAQueryCreatorBundle/Resources/public/js/vendors/keithamus/jwerty/jwerty.js' %}
+                "jwerty": "{{ asset_url | replace({ ('.js'): '' }) }}",
+                {% endjavascripts %}
+                {% javascripts '@NSAQueryCreatorBundle/Resources/public/js/keyCode.js' %}
+                "keyCode": "{{ asset_url | replace({ ('.js'): '' }) }}",
+                {% endjavascripts %}
+                'underscore': '//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min',
                 "knockoutjs": "//cdnjs.cloudflare.com/ajax/libs/knockout/3.0.0/knockout-min"
             }});
     </script>

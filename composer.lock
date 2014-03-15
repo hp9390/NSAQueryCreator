@@ -2397,12 +2397,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twbs/bootstrap.git",
-                "reference": "b50d4a176feb8a8a9ac0e31a64fc218dcf9769a2"
+                "reference": "6d882a64201f2700bbb2c3a7342b4c8e447c694a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/b50d4a176feb8a8a9ac0e31a64fc218dcf9769a2",
-                "reference": "b50d4a176feb8a8a9ac0e31a64fc218dcf9769a2",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/6d882a64201f2700bbb2c3a7342b4c8e447c694a",
+                "reference": "6d882a64201f2700bbb2c3a7342b4c8e447c694a",
                 "shasum": ""
             },
             "type": "library",
@@ -2437,7 +2437,7 @@
                 "responsive",
                 "web"
             ],
-            "time": "2014-03-14 04:50:01"
+            "time": "2014-03-14 17:16:36"
         },
         {
             "name": "willdurand/jsonp-callback-validator",

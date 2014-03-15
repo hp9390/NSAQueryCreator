@@ -1,11 +1,13 @@
 {% extends 'NSAQueryCreatorBundle:Default:layout.html.twig' %}
 {% block content %}
-    {% if site == 'index'  %}
+    {% if site == 'index' %}
         {% include 'NSAQueryCreatorBundle:Default:indexContent.html.twig' %}
-        {% elseif site == 'learnMore' %}
-            {% include 'NSAQueryCreatorBundle:Default:learnMore.html.twig' %}
+    {% elseif site == 'learnMore' %}
+        {% include 'NSAQueryCreatorBundle:Default:learnMore.html.twig' %}
     {% elseif site == 'allQueries' %}
         {% include 'NSAQueryCreatorBundle:Default:allQueries.html.twig' %}
+    {% elseif site == 'addQuery' %}
+        {% include 'NSAQueryCreatorBundle:Default:indexContent.html.twig' %}
     {% endif %}
     {% include 'NSAQueryCreatorBundle:Default:footer.html.twig' %}
 {% endblock content %}
