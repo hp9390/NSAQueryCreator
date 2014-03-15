@@ -4,5 +4,7 @@
 var readyFunction = function() {
     require(['ajaxCallNewQueries', 'enableDetails', 'keyCode']);
     $("[data-toggle=tooltip]").tooltip();
+    $( "#sortable" ).sortable();
+    $( "#sortable" ).disableSelection();
 }
 
