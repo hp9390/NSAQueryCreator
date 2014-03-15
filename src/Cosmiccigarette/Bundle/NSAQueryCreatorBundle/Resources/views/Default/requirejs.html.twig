@@ -31,6 +31,12 @@
                 {% javascripts '@NSAQueryCreatorBundle/Resources/public/js/enableDetails.js' %}
                 "enableDetails": "{{ asset_url | replace({ ('.js'): '' }) }}",
                 {% endjavascripts %}
+                {% javascripts '@NSAQueryCreatorBundle/Resources/public/js/keithamus/jwerty/jwerty.js' %}
+                "jwerty": "{{ asset_url | replace({ ('.js'): '' }) }}",
+                {% endjavascripts %}
+                {% javascripts '@NSAQueryCreatorBundle/Resources/public/js/keyCode.js' %}
+                "keyCode": "{{ asset_url | replace({ ('.js'): '' }) }}",
+                {% endjavascripts %}
                 "knockoutjs": "//cdnjs.cloudflare.com/ajax/libs/knockout/3.0.0/knockout-min"
             }});
     </script>
