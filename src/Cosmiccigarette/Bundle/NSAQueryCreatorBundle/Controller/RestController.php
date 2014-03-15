@@ -56,7 +56,7 @@ class RestController extends Controller {
     }
 
 
-    public function ajaxUpdateQueryAction(Request $request) {
+    public function ajaxUpdateQueryAction() {
         $queries = helper::returnSearchQueries(5, $this->generateUrl('nsa_query_creator_rest_random_query', $params = array(), $absolute = true));
 
         $view = FOSView::create();
@@ -66,13 +66,9 @@ class RestController extends Controller {
         $response = array('searchQueryOne' => $queries['first'],
                           'searchQueryTwo' => $queries['second']);
 
-        if ($response) {
+        if ($response && $queries['first'] && $queries['second']) {
             $view->setStatusCode(200);
-            if ($request->getRequestFormat() === 'html') {
                 $view->setData($response);
-            } else {
-                $view->setData($response);
-            }
         } else {
             $view->setStatusCode(404);
         }

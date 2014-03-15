@@ -3,7 +3,6 @@
 namespace Cosmiccigarette\Bundle\NSAQueryCreatorBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Cosmiccigarette\Bundle\NSAQueryCreatorBundle\DependencyInjection\helper;
 
 class DefaultController extends Controller {
@@ -22,7 +21,6 @@ class DefaultController extends Controller {
 
     public function learnMoreAction() {
         $queries = helper::returnSearchQueries(5, $this->generateUrl('nsa_query_creator_rest_random_query', $params = array(), $absolute = true));
-
         $parameters = array('yearICreatedThis' => 2014,
                             'thisYear' => date("Y"),
                             'name' => 'NSA Query Creator',
@@ -34,13 +32,18 @@ class DefaultController extends Controller {
 
 
     public function allQueriesAction() {
-        $queries = helper::returnSearchQueries(0, $this->generateUrl('nsa_query_creator_rest_all_queries', $params = array(), $absolute = true));
-var_dump($queries);
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $this->generateUrl('nsa_query_creator_rest_all_queries', $params = array(), $absolute = true));
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-type: application/json'));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+        $queries = json_decode(curl_exec($ch))->queries;
         $parameters = array('yearICreatedThis' => 2014,
                             'thisYear' => date("Y"),
                             'name' => 'NSA Query Creator',
                             'site' => 'allQueries',
-                            'queries' => $queries['first']);
+                            'queries' => $queries);
+
         return $this->render('NSAQueryCreatorBundle:Default:index.html.twig', $parameters);
     }
 
