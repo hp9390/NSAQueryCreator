@@ -18,6 +18,7 @@ class Builder extends ContainerAware {
         $menu->setChildrenAttributes(array('class' => 'nav navbar-nav'));
         $menu->setCurrentUri($this->container->get('request')->getRequestUri());
         $menu->addChild('Home', array('route' => 'nsa_query_creator_homepage'));
+        $menu->addChild('Add new keyword', array('route' => 'nsa_query_creator_add_query'));
         $menu->addChild('All queries', array('route' => 'nsa_query_creator_show_all_queries'));
         $menu->addChild('About', array('route' => 'nsa_query_creator_learn_more'));
         $menu->setCurrent(true);

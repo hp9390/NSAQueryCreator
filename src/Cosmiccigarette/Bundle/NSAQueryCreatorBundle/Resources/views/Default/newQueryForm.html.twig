@@ -1,0 +1,32 @@
+{% block form %}
+    <div class="text-center formQueryContainer">
+        <form action="{{ url('nsa_query_creator_add_query') }}" method="post" {{ form_enctype(form) }}>
+            <fieldset>
+                <div class="form-group">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                {{ form_label(form.query, null, {'label': 'Enter a new query you know the NSA uses!', 'label_attr': {'class': 'queryFormLabel' } } ) }}
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+                            {% if not form.vars.valid %}
+                                <div class="alert alert-danger formErrorMessage">
+                                    {{ form_errors(form.query) }}
+                                </div>
+                            {% endif %}
+                            {{ form_widget(form.query, {'attr': {'class': 'queryFormQuery form-control input-lg', 'placeholder': 'Enter a new query here!'} }) }}
+                            {% block submit_widget %}
+                                {% block button_widget %}
+                                    {{ form_widget(form.save, { 'label': 'Submit the new query!','attr': {'class': 'btn btn-default btn-block'} } ) }}
+                                {% endblock button_widget %}
+                            {% endblock submit_widget %}
+                        </div>
+                    </div>
+                </div>
+                {{ form_widget(form._token) }}
+                {{ form_end(form) }}
+            </fieldset>
+        </form>
+    </div>
+{% endblock form %}
