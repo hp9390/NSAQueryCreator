@@ -1,9 +1,6 @@
 /**
  * Created by Holger on 10.03.14.
  */
-jwerty.key('1', function () {
-    $('#searchButtonOne').click();
-});
-jwerty.key('2', function () {
-    $('#searchButtonTwo').click();
+jwerty.key('ctrl+n', function () {
+    $('#getNewQueries').click();
 });
