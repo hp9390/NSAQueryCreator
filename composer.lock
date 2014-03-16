@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "bd79b19ade2c2d84b028ba525300f87b",
+    "hash": "e4dd20d317f6fec8f38c783f07f11ee7",
     "packages": [
         {
             "name": "components/jquery",
@@ -738,6 +738,77 @@
                 "orm"
             ],
             "time": "2014-02-08 16:35:09"
+        },
+        {
+            "name": "fp/jsformvalidator-bundle",
+            "version": "v1.1.1",
+            "target-dir": "Fp/JsFormValidatorBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/formapro/JsFormValidatorBundle.git",
+                "reference": "6abe5d4fa1b141025f8646303987ea052bba24df"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/formapro/JsFormValidatorBundle/zipball/6abe5d4fa1b141025f8646303987ea052bba24df",
+                "reference": "6abe5d4fa1b141025f8646303987ea052bba24df",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "symfony/form": ">=2.3",
+                "symfony/validator": ">=2.3"
+            },
+            "require-dev": {
+                "behat/mink-bundle": "dev-master",
+                "behat/mink-selenium2-driver": "dev-master",
+                "doctrine/doctrine-bundle": "~1.2",
+                "doctrine/orm": ">=2.2.3",
+                "phpunit/phpunit": "3.7.*",
+                "satooshi/php-coveralls": "dev-master",
+                "symfony/assetic-bundle": ">=2.3",
+                "symfony/symfony": ">=2.3"
+            },
+            "suggest": {
+                "doctrine/doctrine-bundle": "For the UniqueEntity validation",
+                "doctrine/orm": "For the UniqueEntity validation",
+                "symfony/assetic-bundle": "For easy enabling",
+                "symfony/symfony": "For using as a Symfony Bundle and for using a default ajax validation"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Fp\\JsFormValidatorBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ton Sharp",
+                    "email": "66ton99@gmail.com"
+                },
+                {
+                    "name": "Yury Maltsev",
+                    "email": "dev.yury.maltsev@gmail.com"
+                }
+            ],
+            "description": "Javascript validation for sf2 forms.",
+            "homepage": "https://github.com/formapro/JsFormValidatorBundle",
+            "keywords": [
+                "form",
+                "javascript",
+                "symfony",
+                "validation"
+            ],
+            "time": "2014-02-28 13:35:42"
         },
         {
             "name": "friendsofsymfony/rest-bundle",
