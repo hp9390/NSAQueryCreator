@@ -58,17 +58,35 @@ class DefaultController extends Controller {
         $form->handleRequest($request);
         if ($this->get('request_stack')
                  ->getCurrentRequest()
-                 ->isMethod('post')) {
+                 ->isMethod('post')
+        ) {
             $repo =
                 $this->getDoctrine()
                      ->getManager()
                      ->getRepository('NSAQueryCreatorBundle:queries');
             $newQuery = $repo->findOneByQuery($query->getQuery());
             if ($newQuery == null) {
-                $em->persist($query);
-                $em->flush();
+                if (strpos($query->getQuery(), ',')) {
+                    $q = explode(',', $query->getQuery());
+                    foreach ($q as $entry) {
+                        $entity = new queries();
+                        $newQuery = $repo->findOneByQuery($entry);
+                        if ($newQuery == null) {
+                            $entity->setQuery($entry);
+                            $em->persist($entity);
+                            $em->flush();
+                            $em->clear();
+                        } else {
+                            $error = 'The keyword ' . $entry . ' already exists in our database! :-) Thank you anyway!';
+                            $form['query']->addError(new FormError($error));
+                        }
+                    }
+                } else {
+                    $em->persist($query);
+                    $em->flush();
+                }
             } else {
-                $error = 'This keyword already exists in our database! :-) Thank you anyway!';
+                $error = 'The keyword ' . $query->getQuery() . ' already exists in our database! :-) Thank you anyway!';
                 $form['query']->addError(new FormError($error));
             }
         }
