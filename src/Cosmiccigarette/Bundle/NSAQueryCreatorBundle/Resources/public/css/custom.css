@@ -16,7 +16,7 @@ div.fadeMe {
     top:        0;
     left:       0;
     position:   fixed;
-    display:    block !important;
+    display:    none;
     }
 
 .centerOfPage {
