@@ -7,6 +7,10 @@ body {
     list-style: none;
     }
 
+.form-error-form-query {
+    list-style-type: none;
+    }
+
 div.fadeMe {
     opacity:    0.9;
     background: #000000;
