@@ -56,7 +56,8 @@ class DefaultController extends Controller {
                                                                   $params = array(),
                                                                   $absolute = true));
         $form->handleRequest($request);
-        if ($this->get('request_stack')
+        if ($form->isValid() &&
+            $this->get('request_stack')
                  ->getCurrentRequest()
                  ->isMethod('post')
         ) {
