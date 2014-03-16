@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new Hearsay\RequireJSBundle\HearsayRequireJSBundle(),
             new FOS\RestBundle\FOSRestBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
+            new Fp\JsFormValidatorBundle\FpJsFormValidatorBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle()
         );
 

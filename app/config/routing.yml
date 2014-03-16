@@ -5,3 +5,7 @@ nsa_query_creator:
 allQueries:
     type:     rest
     resource: Cosmiccigarette\Bundle\NSAQueryCreatorBundle\Controller\RestController
+
+fp_js_form_validator:
+    resource: "@FpJsFormValidatorBundle/Resources/config/routing.xml"
+    prefix: /fp_js_form_validator
