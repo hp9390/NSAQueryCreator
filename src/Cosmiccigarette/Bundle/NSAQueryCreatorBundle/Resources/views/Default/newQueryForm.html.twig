@@ -15,7 +15,7 @@
                                     {{ form_errors(form.query) }}
                                 </div>
                             {% endif %}
-                            {{ form_widget(form.query, {'attr': {'class': 'queryFormQuery form-control input-lg', 'placeholder': 'Enter a new query here!'} }) }}
+                            {{ form_widget(form.query, {'attr': {'class': 'queryFormQuery form-control input-lg', 'placeholder': 'Enter a new query here!', 'autofocus': 'autofocus'} }) }}
                             {% block submit_widget %}
                                 {% block button_widget %}
                                     {{ form_widget(form.save, { 'label': 'Submit the new query!','attr': {'class': 'btn btn-default btn-block'} } ) }}
