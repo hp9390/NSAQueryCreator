@@ -1,12 +1,8 @@
 {% extends 'NSAQueryCreatorBundle:Default:layout.html.twig' %}
 {% block body %}
     <body>
-    <div class="fadeMe" id="fadeMeLoadingOverlay">
-        <p class="centerOfPage well-lg fadeMeLoadingOverlayText">
-            Loading website...
-            Please wait.
-        </p>
-    </div>
+    {% set fadeMeText = "<p class=\"centerOfPage well-lg fadeMeLoadingOverlayText\">Loading website...\nPlease wait.</p>" %}
+    {% include 'NSAQueryCreatorBundle:Default:fadeMe.html.twig' with {'fadeMeText': fadeMeText} only  %}
     <div class="container">
         <!--[if lt IE 7]>
         <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a
