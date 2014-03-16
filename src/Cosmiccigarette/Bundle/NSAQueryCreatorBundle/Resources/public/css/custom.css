@@ -41,3 +41,26 @@ div.fadeMe {
     font-variant:   small-caps;
     font-style:     oblique;
     }
+.blurryBackgroundContent:before {
+    content: "";
+    position: fixed;
+    z-index: -10000000000000;
+
+    display: block;
+    background-image: url('https://s3-eu-west-1.amazonaws.com/comiccigarette/490613_italy_firenze_florence_la-cattedrale-di-santa_2048x1241_(www.GdeFon.ru).jpg');
+    width: 1200px;
+    height: 800px;
+
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+    }
+
+.blurryBackgroundContent {
+    position: fixed;
+    z-index: -10000000000000;
+    margin-left: 20px;
+    margin-right: 20px;
+    }
